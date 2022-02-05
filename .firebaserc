@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "leovegas-challenge"
+  },
+  "targets": {
+    "leovegas-challenge": {
+      "hosting": {
+        "leo-games-app": [
+          "leovegas-challenge"
+        ]
+      }
+    }
   }
 }
