@@ -1,7 +1,19 @@
+.category-selector {
+  width: 250px;
+}
+
 .filter-field {
   padding: 10px 0 10px 0;
 }
 
+.filter-field > * {
+  margin: 5px;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+}
+
 .title {
   color: var(--accent-color);
+  padding-top: 15px;
 }

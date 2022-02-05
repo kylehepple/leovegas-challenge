@@ -4,14 +4,26 @@ template.innerHTML = `
 
     .game-entry-container {
       background: var(--grey-background);
+      box-shadow: 0 0 11px rgba(33, 33, 33, .2);
       cursor: pointer;
       margin: 10px 0 15px 0;
       padding-top: 10px;
       border-bottom: var(--accent-color) 5px solid;
+      transition: box-shadow .3s;
+    }
+
+    .game-entry-container:hover {
+      box-shadow: 0 0 11px rgba(33, 33, 33, .5);
     }
 
     .game-entry-name {
-      color: var(--text-color, black)
+      color: var(--text-color, black);
+      height: 48px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
     }
 
     img {

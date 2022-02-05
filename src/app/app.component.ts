@@ -12,7 +12,7 @@ import './components/game-entry';
 export class AppComponent implements OnInit {
 
   allGames: Game[] = [];
-  catagories: string[] = [];
+  categories: string[] = [];
 
   filterForm: FormGroup;
 
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
 
     this.gamesService.getGames().subscribe((games: Game[]) => {
       this.allGames = games;
-      this.catagories = this.findUniqueCategories(games);
+      this.categories = this.findUniqueCategories(games);
     });
 
   }

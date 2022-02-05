@@ -6,21 +6,22 @@
 
       <form [formGroup]="filterForm">
 
-        <div>
-          <select [formControl]="filterForm.controls.category">
+        <div class="filter-field">
+
+          <select class="form-control-lg category-selector" [formControl]="filterForm.controls.category">
             <option value="all">{{ 'All games' }}</option>
             <option
-              *ngFor="let cat of catagories"
+              *ngFor="let cat of categories"
               [value]="cat">
               {{ formatCategoryName(cat) }}
             </option>
           </select>
-        </div>
 
-        <div class="filter-field">
           <input
+          class="form-control-lg"
           [formControl]="filterForm.controls.filter"
           placeholder="Filter games..." />
+
         </div>
 
       </form>
