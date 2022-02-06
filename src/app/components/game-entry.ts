@@ -47,6 +47,14 @@ export class GameEntry extends HTMLElement {
   nameElement: HTMLParagraphElement;
   imgElement: HTMLImageElement;
 
+  constructor() {
+    super();
+    this.root = this.attachShadow({ mode: 'open' });
+    this.root.appendChild(template.content.cloneNode(true));
+    this.nameElement = this.root.querySelector('.game-entry-name');
+    this.imgElement = this.root.querySelector('img');
+  }
+
   static get observedAttributes(): string[] {
     return ['gameName', 'imageSrc'];
   }
@@ -67,14 +75,6 @@ export class GameEntry extends HTMLElement {
   set imageSrc(value) {
     this._IMAGESRC = value;
     this.imgElement.src = `http://${this._IMAGESRC}`;
-  }
-
-  constructor() {
-    super();
-    this.root = this.attachShadow({ mode: 'open' });
-    this.root.appendChild(template.content.cloneNode(true));
-    this.nameElement = this.root.querySelector('.game-entry-name');
-    this.imgElement = this.root.querySelector('img');
   }
 
   attributeChangedCallback(attrName, oldValue, newValue): void {

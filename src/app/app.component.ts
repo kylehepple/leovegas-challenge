@@ -13,7 +13,6 @@ export class AppComponent implements OnInit {
 
   allGames: Game[] = [];
   categories: string[] = [];
-
   filterForm: FormGroup;
 
   constructor(
@@ -41,17 +40,9 @@ export class AppComponent implements OnInit {
 
     const categories = [];
 
-    games.forEach(game => {
+    games.forEach(game => categories.push(...game.categories));
 
-      game.categories.forEach(cat => {
-        if (categories.indexOf(cat) === -1) {
-          categories.push(cat);
-        }
-      });
-
-    });
-
-    return categories;
+    return Array.from(new Set(categories));
 
   }
 
